@@ -30,16 +30,17 @@ import Foundation
  ````
  ![rshift](rshift.png)
  */
+// 비트를 오른쪽으로 밀고 밀려난 비트는 사라진다.
+// 왼쪽에는 일단 0으로 채운다.
 
-
-
-
+let a: UInt8 =  0b0010_0011
+a >> 1 // 2로 나눈 것과 같다
+a >> 2 // 4로 나눈 것과 같다
+// Unsigned Integer는 부호비트를 신경쓰지않아도 되지만 Signed의 경우는 더 복잡하다. (아래)
 /*:
  ## Arithmetic Shift
  ![ashift](ashift.png)
  */
-
-
-
-
-//: [Next](@next)
+// Signed Integer에서는 부호비트를 고려해주어야 한다.
+// 제일 오른쪽비트는 사라지는 것은 위와 같다.
+// 제일 왼쪽비트는 0으로 채워지는 것이 아니라 기존의 있던 부호비트로 채워진다.

@@ -20,12 +20,24 @@
 //  THE SOFTWARE.
 //
 import UIKit
+/*:
+ # Operators
+ */
+/* 연산자의 종류
+ Infix Operator시 피연산자와 연산자 간 공백을 동일하게 주어야 한다.
+ Prefix, Postfix는 공백없이 사용해야 한다.
+ */
 
+/* Precedence 연산 우선순위
+괄호 ( )로 구분할 수 있다.
+ */
+
+/* Associativity 연산 결합규칙 */
 /*:
  # Arithmetic Operators
  */
-
-
+let a = 12
+let b = 34
 
 /*:
  ## Unary Plus Operator
@@ -33,17 +45,15 @@ import UIKit
  +a
  ````
  */
-
-
-
++a
++b
 /*:
  ## Addition Operator
  ````
  a + b
  ````
  */
-
-
+a + b
 
 /*:
  ## Unary Minus Operator
@@ -51,49 +61,52 @@ import UIKit
  -a
  ````
  */
-
-
-
+-a
+-b
 /*:
  ## Subtraction Operator
  ````
  a - b
  ````
  */
-
-
-
+a - b
 /*:
  ## Multiplication Operator
  ````
  a * b
  ````
  */
-
-
-
+a * b
 /*:
  ## Division Operator
  ````
  a / b
  ````
  */
+// 정수끼리 나누기 연산을 하면 몫만 구해짐
+a / b // 몫을 구하는 연산자
+b / a
 
+// 정수를 실수로 바꾸어 나누기 연산을 해보면
+let c = Double(a)
+let d = Double(b)
 
-
+c / d
+d / c
 /*:
  ## Remainder Operator (Modulo Operator)
  ````
  a % b
  ````
  */
-
-
-
+a % b // 나머지를 구하는 연산자
+//c % d // 나머지 연산은 정수에만 지원한다.
+c.truncatingRemainder(dividingBy: d)
 /*:
  ## Overflow
  */
+//let num: Int8 = 9 * 9 * 9
+// 타입이 저장할 수 있는 범위를 넘어가는 값을 저장하면 오버플로우가 발생한다. 스위프트에서는 오버플로우를 허용하지 않는다.
 
-
-
-
+let num: Int = 9 * 9 * 9
+// 필요한 경우에는 더 큰 타입을 사용해야 한다.

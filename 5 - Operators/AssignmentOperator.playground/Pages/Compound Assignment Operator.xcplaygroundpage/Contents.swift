@@ -34,9 +34,13 @@ import Foundation
  a = a + b
  ````
  */
+var a = 1
+var b = 2
+a = a + b
 
-
-
+a = 1
+a = 2
+a += b
 /*:
  ## Subtraction Assignment Operator
  ````
@@ -44,8 +48,6 @@ import Foundation
  a = a - b
  ````
  */
-
-
 
 /*:
  ## Multiplication Assignment Operator
@@ -55,8 +57,6 @@ import Foundation
  ````
  */
 
-
-
 /*:
  ## Division Assignment Operator
  ````
@@ -64,8 +64,6 @@ import Foundation
  a = a / b
  ````
  */
-
-
 
 /*:
  ## Modulo Assignment Operator
@@ -75,7 +73,6 @@ import Foundation
  ````
  */
 
-
 /*:
  ## Bitwise AND Assignment Operator
  ````
@@ -83,8 +80,6 @@ import Foundation
  a = a & b
  ````
  */
-
-
 
 /*:
  ## Bitwise OR Assignment Operator
@@ -94,8 +89,6 @@ import Foundation
  ````
  */
 
-
-
 /*:
  ## Bitwise XOR Assignment Operator
  ````
@@ -103,8 +96,6 @@ import Foundation
  a = a ^ b
  ````
  */
-
-
 
 /*:
  ## Bitwise Left Shift Assignment Operator
@@ -114,8 +105,6 @@ import Foundation
  ````
  */
 
-
-
 /*:
  ## Bitwise Right Shift Assignment Operator
  ````
@@ -123,15 +112,3 @@ import Foundation
  a = a >> b
  ````
  */
-
-
-
-
-
-
-
-
-
-
-
-

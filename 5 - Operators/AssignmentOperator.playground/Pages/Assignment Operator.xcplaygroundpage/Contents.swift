@@ -22,12 +22,22 @@
 import UIKit
 
 /*:
- # Assignment Operator
+ # Assignment Operator 할당연산자
  ````
  a = b
  ````
  */
+let a = 12
+var b = 34
+b = a
 
+//if a = 0 {
+//}
 
+if a == 0 {
+    
+}
+
+// lvalue, rvalue
 
 //: [Next](@next)

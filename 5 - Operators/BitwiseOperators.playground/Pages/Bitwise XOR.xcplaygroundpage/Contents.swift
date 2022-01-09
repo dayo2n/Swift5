@@ -30,8 +30,11 @@ import Foundation
  ````
  ![xor](xor.png)
  */
+// 두 비트가 다를때만 결과비트가 1, 같으면 0
+let a: UInt8 = 0b0010_0011
+let b: UInt8 = 0b0001_1010
 
+a ^ b
 
-
-
+0b0011_1001
 //: [Next](@next)

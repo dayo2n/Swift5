@@ -26,17 +26,23 @@ import UIKit
  ## Syntax
  ![Syntax](syntax.png)
  */
+let hour = 12
 
+hour < 12 ? "am" : "pm" // 두번째와 세번째 피연산자의 자료형이 일치해야 한다.
 
+if hour < 12 {
+    "am"
+} else {
+    "pm"
+}
 
+/*
+ hour < 11 : "Good Morning"
+ hour < 17 : "Good Afternoon"
+ "Good Evening"
+ */
 
+hour < 11 ? "Good Morning" : hour < 17 ? "Good Afternoon" : "Good Evening"
 
-
-
-
-
-
-
-
-
-
+hour < 11 ? "Good Morning" : (hour < 17 ? "Good Afternoon" : "Good Evening")
+// 선택지가 세 개 이상인 경우에는 삼항연산자보다는 if 또는 switch문을 이용한다.

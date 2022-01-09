@@ -26,36 +26,36 @@ import UIKit
  # Overflow Operators
  */
 
+Int8.min
+Int8.max
 
-
+//let num: Int8 = Int8.max + 1
 /*:
  ## Overflow Addition Operator
  ````
  a &+ b
  ````
  */
-
-
-
+// 앰퍼샌드 ㅇ연산을 이용하면 오버플로우를 허용할 수 있다.
+let a: Int8 = Int8.max
+//let b: Int8 = a + 1
+let b: Int8 = a &+ 1 // -128: Int8을 저장할 수 있는 가장 작은 값이다.
+// 오버플로우 연산이 메모리 공간의 크기를 바꾸지 않기 때문에
 /*:
  ## Overflow Subtraction Operator
  ````
  a &- b
  ````
  */
-
-
-
+let c: Int8 = Int8.min
+let d: Int8 = c &- 1
 /*:
  ## Overflow Multiplication Operator
  ````
  a &* b
  ````
  */
-
-
-
-
-
-
-
+let e: Int8 = Int8.max &* 2
+// 이거는 궁금해도 딱히 알 필요없다... 로직은 아래와 같다.
+//Int8.max * 2 = 127 * 2 = 254
+// 0 -> ... -> 127 -> -128 -> ... -> -2

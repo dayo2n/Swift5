@@ -30,10 +30,10 @@ import Foundation
  ````
  ![and](and.png)
  */
+//로직에서는 앰퍼샌드가 두 개였는데 비트와이즈에서는 하나이다!
+let a: UInt8 = 0b0010_0010
+let b: UInt8 = 0b1100_1110
 
-
-
-
-
-
+a & b
+0b0000_0010
 //: [Next](@next)

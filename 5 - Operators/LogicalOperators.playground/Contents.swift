@@ -21,10 +21,10 @@
 //
 import UIKit
 
+// 연산의 표현식과 결과는 항상 Bool
 /*:
  # Logical Operators
  */
-
 
 /*:
  ## Logical NOT Operators
@@ -32,39 +32,36 @@ import UIKit
  !a
  ````
  */
+!true
 
-
-
+let a = 12
+let b = 34
+a < b
+// !a < b
+!(a < b)
 /*:
  ## Logical AND Operators
  ````
  a && b
  ````
  */
+a > 30 && b % 2 == 0
+// a > 30 : false
+// b % 2 == 0 : true
 
-
-
+true && true
+true && false
+false && true
+false && false
 /*:
  ## Logical OR Operators
  ````
  a || b
  ````
  */
+a > 30 || b % 2 == 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+true || true
+true || false
+false || true
+false || false
