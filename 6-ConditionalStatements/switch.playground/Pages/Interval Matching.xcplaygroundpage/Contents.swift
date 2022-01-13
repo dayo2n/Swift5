@@ -27,6 +27,7 @@ import Foundation
 /*:
  # Interval Matching
  */
+// 범위연산을 이용하여 매칭
 
 let temperature = -8
 

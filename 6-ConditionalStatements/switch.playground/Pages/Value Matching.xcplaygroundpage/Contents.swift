@@ -26,13 +26,17 @@ import UIKit
  ## Syntax
  ![switch-syntax](switch-syntax.png)
  */
+// 자바와 달리 break를 걸어주지 않아도 된다!
+// 케이스문을 실행하면 자동으로 switch문을 빠져나가는데, 빠져나가고 싶지않다면 fallthrough를 쓰면 된다. -> "Fall Through" 소스파일에서 다룸
+// case문에는 최소 하나 이상의 코드가 있어야하는데, 쓸 코드가 없으면 break를 쓰면 된다. (굳이 쓸 일은 없을듯...)
+
 
 let num = 1
 
 switch num {
 case 1:
    print("one")
-case 2, 3:
+case 2, 3: // 여러개의 패턴과 매칭 가능하다. 콤마(,)로 연결하여 나열한다.
    print("two or three")
 default:
    print("others")
@@ -43,6 +47,8 @@ default:
  ## Syntax
  ![where](where.png)
  */
+
+// 패턴을 매칭되더라도, where 조건문에 false라면 구문이 실행되지 않는다.
 
 switch num {
 case let n where n <= 10:

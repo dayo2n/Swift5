@@ -34,7 +34,7 @@ case 1:
    print("one")
 case 2:
    print("two")
-   fallthrough
+   fallthrough // 여기서 fallthrough를 쓰면, 패턴이 매칭되지 않더라도 아래 케이스문을 그냥 실행해버린다.
 case 3:
    print("three")
 default:
@@ -53,27 +53,3 @@ case 10:
 default:
    print("reset")
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
