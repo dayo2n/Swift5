@@ -25,20 +25,40 @@ import UIKit
  # Optional Pattern
  */
 
-let a: Int? = 0
+//Optional // ctrl + cmd + click -> optional이 구현되어 있는 곳으로 이동!
 
-let b: Optional<Int> = 0
+let a: Int? = 0 // 단축문법
+
+let b: Optional<Int> = 0 // 정석 문법. 이론적으로만 알아도 된다.
+
+// *********
+if a == nil { // 단축문법
+    
+}
+if a == .none { // 정석
+    
+}
+
+// *********
+if a == 0 {
+    
+}
+if a == .some(0){
+    
+}
+
+// optional이 열거형으로 구현되어 있고, none 또는 some 케이스가 있다는 점을 알 수 있다!
+// => enumeration case pattern과 optional pattern을 조합하여 활용할 수 있다!
 
 
 if let x = a {
    print(x)
 }
-
+// 위 코드를 enumeration case pattern으로 작성해보자
 if case .some(let x) = a {
    print(x)
 }
-
-
+// enumeration case pattern으로 작성할 수 있다면 optional pattern도 적용할 수 있다.
 if case let x? = a {
    print(x)
 }
@@ -47,38 +67,11 @@ if case let x? = a {
 let list: [Int?] = [0, nil, nil, 3, nil, 5]
 
 for item in list {
-   guard let x = item else { continue }
+   guard let x = item else { continue } // nil이 들어오면 continue
    print(x)
 }
 
-
+// 결과는 동일하지만 guard문을 작성하지 않아도 되므로 간단해진다.
 for case let x? in list {
    print(x)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
