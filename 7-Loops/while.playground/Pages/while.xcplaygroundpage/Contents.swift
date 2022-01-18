@@ -22,28 +22,24 @@
 
 import UIKit
 
+
+// for-in loop : range나 collection을 반복하므로 반복횟수를 예측할 수 있다.
+// while loop: condition을 기반으로 반복여부를 결정하기 때문에 반복횟수를 예측하기 어렵고, 무한루프에 빠질 위험이 크다.
 /*:
  # while
  
  ## Syntax
  ![while](syntax-while.png)
  */
+var num = 1
+var sum = 0
 
+while num <= 100 {
+    sum += num
+    num += 1
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+sum
 
 
 //: [Next](@next)

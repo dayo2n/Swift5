@@ -24,6 +24,9 @@
 
 import Foundation
 
+
+// Java의 do-while과 같다.
+// 코드를 먼저 한 번 실행한 다음에 조건을 검사한다.
 /*:
  # repeat-while
  
@@ -31,18 +34,36 @@ import Foundation
  ![repeat-while](syntax-repeat-while.png)
  */
 
+var num = 0
+while num < 100 {
+    num += 1
+}
+
+num
+
+num = 0
+repeat {
+    num += 1
+}while num < 100
+
+num
 
 
+// 같은 결과가 나왔지만 이 두 while문의 동작구조를 자세히 살펴보면 차이점이 있다.
+// 동작구조의 차이를 확인하기 위해 num의 초기값을 100으로 설정하여 다시 실행해본다.
 
+num = 100
+while num < 100 {
+    num += 1
+}
 
+num
 
+num = 100
+repeat {
+    num += 1
+}while num < 100
 
+num
 
-
-
-
-
-
-
-
-
+// 반복문이 무한루프에 빠지지 않도록 condition이 false로 잘 빠져나가는지 여러번 확인하는 것이 중요하다~~!
