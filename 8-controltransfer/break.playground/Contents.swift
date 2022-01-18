@@ -25,31 +25,31 @@ import UIKit
  # break
  */
 
+// 현재 실행중인 코드를 중지하고 다음 문장을 실행한다. == 다음 문장으로 제어를 전달한다.
 
+let num = 1 // 짝수로도 바꿔보자!
+switch num {
+case 1...10:
+    print("begin block")
+    
+    if num % 2 != 0 {
+        break
+    }
+    print("end block ")
+default:
+    break // 비우면 에러남. 아무작동도 하지않을때는 break로 채워준다.
+}
 
+print("done")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for i in 1...10{
+    print("OUTER LOOP", i)
+    
+    for j in 1...10{
+        print(" inner loop", j)
+        
+        if j > 1 {
+            break // break는 가장 인접한 반복문만 종료한다.
+        }
+    }
+}

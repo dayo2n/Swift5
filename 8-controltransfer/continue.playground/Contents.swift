@@ -24,28 +24,26 @@ import UIKit
 /*:
  # continue
  */
+// break는 반복문과 switch문에서 사용한다.
+// continue는 반복문에서만 사용한다.
 
+for index in 1...10{
+    print(index)
+    
+    if index % 2 == 0 {
+        continue // 문장을 중지하지는 않고 다음 코드 또는 반복으로 이동
+    }
+    print(index)
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for i in 1...10 {
+    print("OUTER LOOP", i)
+    
+    for j in 1...10 {
+        if j % 2 == 0 {
+            continue
+        }
+        
+        print ("    inner loop", j)
+    }
+}
