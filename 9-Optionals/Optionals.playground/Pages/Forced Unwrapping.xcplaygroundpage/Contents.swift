@@ -51,7 +51,7 @@ num = nil
 print(num)
 //print(num!) // 값이 없는 상태 nil을 unwrapping하면 에러가 발생한다.
 
-// 이때문에 forced unwrapping시에는 값이 있는지 확인하는 과정을 반드시 거쳐야 한다.
+// 이 때문에 forced unwrapping시에는 값이 있는지 확인하는 과정을 반드시 거쳐야 한다.
 if num != nil {
     print(num!)
 }

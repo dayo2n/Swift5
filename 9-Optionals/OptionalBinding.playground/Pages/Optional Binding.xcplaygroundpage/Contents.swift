@@ -32,9 +32,6 @@ if num != nil {
 }
 // 그러나 이렇게 코드를 작성하는 경우는 거의 없고 이번 시간에 공부할 옵셔널 바인딩을 이용한다.
 
-
-
-
 /*:
  ## Syntax
  ![optional-binding-syntax](optional-binding-syntax.png)
