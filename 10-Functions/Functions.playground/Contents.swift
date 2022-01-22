@@ -24,34 +24,23 @@ import UIKit
 /*:
  # Functions
  */
-
+// "Reusability"
 /*:
  ## Calling Functions
  ![call](call.png)
  */
 
 
-
-
-
-
-
-
-
-
+print("hello")
 
 /*:
  ## Defining Functions
  ![define](define.png)
  */
+// 함수이름은 lowerCamelCase로 작성하고 직관적으로 네이밍
 
-
-
-
-
-
-
-
-
-
-
+// 파라미터와 리턴 값이 없는 함수
+func sayHello() {
+    print("hello, Swift")
+}
+sayHello() // 함수를 호출해야 실행이 된다!

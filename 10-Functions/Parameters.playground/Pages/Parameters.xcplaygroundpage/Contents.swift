@@ -27,62 +27,39 @@ import UIKit
  ![param](param.png)
  */
 
+func add() -> Int {
+    return 1 + 2
+}
+add()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+func add(a: Int, b: Int) -> Int {
+    // 파라미터는 함수바디에서 사용할 수 있는 임시 상수이다. let이므로 값을 변경할 수 없다.
+    return a + b
+}
 
 /*:
  ## Calling Functions
  ![call](call.png)
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+add(a: 12, b: 2)
+// 함수 호출시에는 '[파라미터이름] : [값 또는 표현식]' 형태로 쓴다.
+// 파라미터의 이름은 formal parameter(함수 정의시 쓴 이름)와 달라도 된다.
+// 호출 시 전달하는 인자는 argument, actual parameter라고 한다.
 
 /*:
  ## Default Value
  ![defval](defval.png)
  */
+// 함수 정의시 기본값을 할당하는 방법
+
+func sayHello(to: String = "Stranger") {
+    print("Hello, \(to)")
+}
+
+sayHello()
+sayHello(to: "Swift")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Param의 scope는 함수 body 안으로만 한정되어 있다.
+// 파라미터는 함수 호출시 생성되고 호출된 함수의 실행이 종료되면 자동으로 삭제된다! GC의 개념인가?

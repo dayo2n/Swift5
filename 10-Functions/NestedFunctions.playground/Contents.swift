@@ -25,7 +25,27 @@ import UIKit
  # Nested Functions
  */
 
+//func outer() {
+//    func inner() {
+//        print("inner")
+//    }
+//    inner()
+//    print("outer")
+//}
+//
+//outer()
+//inner() // outer()의 nested 함수이므로 global scope에서 호출할 수 없다.
 
 
+// 함수에서 nested 함수를 리턴하면 함수를 호출한 범위로 확장된다.
+func outer() -> () -> (){
+    func inner() {
+        print("inner")
+    }
+    inner()
+    print("outer")
+    return inner
+}
 
-
+let f = outer()
+f()

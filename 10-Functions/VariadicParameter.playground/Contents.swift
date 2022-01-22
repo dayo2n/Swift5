@@ -26,27 +26,17 @@ import UIKit
  ![variadic](variadic.png)
  */
 
+// 가변 파라미터: 배열
+print("Hello")
+print("Hello", "Swift") // 공백으로 분리되어 출력된다. 파라미터가 두 개가 아닌 하나다! 가변적인 하나의 파라미터..
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+func printSum(of nums: Int...){
+    // 가변파라미터는 하나만 허용되고, 불변파라미터는 함께 사용할 수 있다.
+    // 디폴트값 지정이 불가능하다.
+    var sum = 0
+    for i in nums{
+        sum += i
+    }
+    print(sum)
+}
+printSum(of: 1,2,3,4,5,6,7)
