@@ -60,3 +60,28 @@
 > Section 7. Loop Statements
 - for-in Loop
 - while Loop : while, repeat-while
+
+> Section 8. Control Transfer Statements, Labeled Statements
+- Control Transfer Statements
+- break
+- continue
+- Labeled Statements
+
+> Section 9. Optionals
+- Optionals
+- Optional Binding
+- IUO: Implicitly Unwrapped Optionals
+- Nil-Coalescing Operator
+- Optional Chaining
+- Optional Pattern
+
+> Section 10. Functions
+- Functions
+- Return Values
+- Parameters
+- Argument Label
+- Variadic Parameters: 가변 파라미터
+- inout Parameter: 입출력 파라미터
+- Funciton Notation
+- Function Types
+- Nested Functions
