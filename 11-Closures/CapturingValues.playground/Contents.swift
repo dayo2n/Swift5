@@ -24,29 +24,21 @@ import UIKit
 /*:
  # Capturing Values
  */
+// closure에서 값을 캡쳐하는 방법
+// +) global scope의 클로저는 값을 캡쳐하지 않는다.
 
 
 
+var num = 0
+let c = {
+    num += 1 // 클로저 내에서 값을 바꾸면 실제값이 바뀐다.
+    print("check point #1: \(num)")
+}
+c()
 
+print("check point #2: \(num)")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Obective-C는 값을 복사하는 방식으로 캡쳐
+// Swift는 참조하는 방식으로 캡쳐: 깊은 복사와 동일한 의미인듯
 
 

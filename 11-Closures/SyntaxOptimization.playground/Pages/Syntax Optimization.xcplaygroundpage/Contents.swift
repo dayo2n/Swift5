@@ -20,10 +20,12 @@
 //  THE SOFTWARE.
 //
 import Foundation
+import os
 
 /*:
  # Syntax Optimization
  */
+// 스위프트의 문법 최적화 :: 문법을 최대한 단순하게 작성하는 것을 선호한다.
 
 let products = [
    "MacBook Air", "MacBook Pro",
@@ -34,6 +36,59 @@ let products = [
    "Apple Watch Series 4", "Apple Watch Nike+"
 ]
 
+// 정식 문법 1
+var proModels = products.filter({ (name: String) -> Bool in
+    return name.contains("Pro")
+})
+
+// 문법1을 최적화해보자
+products.filter({
+    // (1) 파라미터 형식과 리턴형을 생략 가능: 클로저를 통해 추론이 가능하므로,
+    // 따라서 파라미터의 이름과 in을 모두 지우고
+    
+    $0.contains("Pro")
+    // (2) short hand argument 형태로 리턴
+    // SHORT HAND ARGUMENT: 첫 아규먼트는 $0, 두번째는 $1, ...
+    // (3) implicit return 형태이다. 리턴 키워드가 생략된 상태.
+})
+
+// (4) inline에서 trailing closure로
+products.filter(){
+    $0.contains("Pro")
+}
+
+// (5) 괄호 생략
+products.filter {
+    $0.contains("Pro")
+}
+
+//끝!
 
 
+// ---------------------------------------------------------------
 
+// 정식 문법 2
+proModels.sort(by: { (lhs: String, rhs: String) -> Bool in
+    return lhs.caseInsensitiveCompare(rhs) == .orderedAscending
+})
+
+// (1) 파라미터 형식과 리턴형 생략
+// (2) short-hand argument 사용
+proModels.sort(by: {
+    return $0.caseInsensitiveCompare($1) == .orderedAscending
+})
+
+// (3) implicit return 사용
+proModels.sort(by: {
+    $0.caseInsensitiveCompare($1) == .orderedAscending
+})
+
+// (4) inline closure to trailing closure
+proModels.sort() {
+    $0.caseInsensitiveCompare($1) == .orderedAscending
+}
+
+// (5) 괄호 생략
+proModels.sort{
+    $0.caseInsensitiveCompare($1) == .orderedAscending
+}
