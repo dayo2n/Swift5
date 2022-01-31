@@ -26,22 +26,15 @@ import UIKit
  ![decomposition](decomposition.png)
  */
 
+// 튜플에 저장된 멤버를 개별 상수 또는 변수에 따로 저장하는 것
+let data = ("<html>", 200, "OK", 12.34)
 
+//let body = data.0
+//let code = data.1
+//let message = data.2
+//let size = data.3
+// 이렇게 해도 되지만 번거롭다!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//let (body, code, message, size) = data
+// 네번째 멤버는 분해하고 싶지 않으면? 생략할 수 있다! 생략은 Wild Card Pattern
+let (body, code, message, _) = data

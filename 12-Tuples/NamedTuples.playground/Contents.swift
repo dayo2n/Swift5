@@ -28,24 +28,13 @@ import UIKit
  */
 
 let data = ("<html>", 200, "ok", 12.34)
+data.0
 
 
+// 튜플 멤버에 이름을 붙여보자!
+let named = (body: "<html>", status: 200, statusMessage: "OK", dataSize: 12.34)
+named.body
+named.0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+named.status
+named.1 // 인덱스로도 접근 가능하다
