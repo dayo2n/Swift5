@@ -85,3 +85,15 @@
 - Funciton Notation
 - Function Types
 - Nested Functions
+
+> Section 11. Closures
+- Closures
+- Syntax Optimization
+- Capturing Values
+- Escaping Clousre
+
+> Section 12. Tuples
+- Tuples
+- Named Tupes
+- Tuple Decomposition
+- Tuple Matching
