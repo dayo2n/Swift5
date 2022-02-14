@@ -31,22 +31,19 @@ let korean = "행복하세요"
 let english = "Be happy"
 let arabic = "كن سعيدا"
 
+// 문자열 시작 부분 : Leading, 끝부분 : Trailing
+// 문자열을 검색할 때 Leading -> Trailing 방향 (한국어, 영어)
+// 아랍어는 오른쪽에서 왼쪽으로 읽는다.
+
+if let range = english.range(of: "p") {
+    english.distance(from: english.startIndex, to: range.lowerBound)
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// backward 옵션은 문자열의 검색방향을 반대로 바꿔준다.
+if let range = english.range(of: "p", options: [.backwards]) {
+    english.distance(from: english.startIndex, to: range.lowerBound)
+}
 
 
 //: [Next](@next)

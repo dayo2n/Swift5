@@ -20,33 +20,20 @@
 //  THE SOFTWARE.
 //
 import UIKit
-
+// 여러줄로 문자열을 입력하는 방법
 /*:
  # Multiline String Literal
  */
 
+// singleline에서 \n을 이용해 줄바꿈 가능
+let loremIpSum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
+// 명시적인 줄바꿈을 허용한다. 큰따옴표 세개의 다음줄에 문장을 작성해야 한다.
+let multiline = """
+    Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+"""
+// 닫는 큰따옴표의 위치가 첫 줄의 시작 위치를 의미한다. 첫 줄의 시작 위치보다 큰따옴표가 뒤에 있다면 오류가 발생한다!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(multiline)

@@ -26,21 +26,13 @@ import Foundation
 /*:
  # Width Insensitive Option
  */
+let a = "\u{30A1}"
+let b = "\u{ff67}"
 
+a == b
+a.compare(b) == .orderedSame
+// 같은 문자지만 너비가 조금 다르기 때문에 다른 문자로 인식한다
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 반각문자와 정각 문자를 구분하지 않고 비교하려면
+a.compare(b, options: [.widthInsensitive]) == .orderedSame
 //: [Next](@next)

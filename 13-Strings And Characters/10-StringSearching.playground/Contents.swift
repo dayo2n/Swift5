@@ -24,30 +24,25 @@ import UIKit
 /*:
  # Finding Substrings
  */
+let str = "Hello, Swift"
+
+str.contains("Swift")
+str.contains("swift") // 대소문자 구분
+
+str.lowercased().contains("swift")
+
+str.range(of: "Swift") // if not contains, return nil
+str.range(of: "swift", options: [.caseInsensitive])
+
+let str2 = "Hello, Programming"
+let str3 = str2.lowercased()
 
 
+// 공통된 접두어가 있으면 새 문자열로 반환
+var common = str.commonPrefix(with: str2)
+common = str.commonPrefix(with: str3)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+str.commonPrefix(with: str3, options: [.caseInsensitive])
+// 리턴된 문자열은 대문자가 포함된다. 원본 문자열인 str에서 가져오기 때문!
+str3.commonPrefix(with: str, options: [.caseInsensitive])
+// 이번에는 원본 문자열이 str3이므로 소문자로만 구성된 문자열이 출력된다

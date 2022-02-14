@@ -27,15 +27,17 @@ import Foundation
  # Forced Ordering Option
  */
 
+let upper = "STRING"
+let lower = "string"
 
+upper == lower
 
+upper.compare(lower, options: [.caseInsensitive]) == .orderedSame
 
-
-
-
-
-
-
+// Forced Ordering Option은 전체 옵션을 포함하여 비교했을 때 같은 문자열로 판단된다면,
+// 일부 옵션을 무시하고 최대한 정렬될 수 있도록 비교한다.
+// 비교하는 두 문자열이 동일하다면 어쩔 수 없이 true를 반환하게 된다!
+upper.compare(lower, options: [.caseInsensitive, .forcedOrdering]) == .orderedSame
 
 
 //: [Next](@next)

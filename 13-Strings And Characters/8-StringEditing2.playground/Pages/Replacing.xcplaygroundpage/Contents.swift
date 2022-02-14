@@ -25,8 +25,22 @@ import Foundation
 /*:
  # Replacing Substrings
  */
+var str = "Hello, Objective-C"
 
+// replace(void), replacing(String) : 원본은 건드리지 않고 새 문자열을 반환
+if let range = str.range(of: "Objective-C") {
+    str.replaceSubrange(range, with: "Swift")
+}
+str
 
+if let range = str.range(of: "Hello") {
+    let s = str.replacingCharacters(in: range, with: "Hi")
+}
+str
 
-
+var s = str.replacingOccurrences(of: "Swift", with: "Awesome Swift") //of: 가 있다면 이를 with: 로 바꿔준다.
+s = str.replacingOccurrences(of: "swift", with: "Awesome Swift") //of: 가 있다면 이를 with: 로 바꿔준다.
+// 문자열에서는 기본적으로 대소문자를 구분한다!
+s = str.replacingOccurrences(of: "Swift", with: "Awesome Swift", options: [.caseInsensitive]) // caseInsensitive를 옵션으로 쓰면 대소문자를 구분하지 않게 됨.
+s
 //: [Next](@next)

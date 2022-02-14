@@ -24,21 +24,29 @@ import UIKit
 /*:
  # String Indices
  */
+let str = "Swift" // swift 문자열 인덱스는 정수가 아님
 
+str.startIndex // nested type, 정수가 아님!
+let firstCh = str[str.startIndex]
+print(firstCh)
 
+//let lastCh = str[str.endIndex] // error : index out of bound
+let lastCharIndex = str.index(before: str.endIndex)
+let lastCh = str[lastCharIndex] // 정수형이 아니므로 단순히 1을 뺄 수 없다!
+print(lastCh)
 
+let secondCharIndex = str.index(after: str.startIndex)
+let secondCh = str[secondCharIndex]
+print(str[secondCharIndex])
 
+var thirdCharIndex = str.index(str.startIndex, offsetBy: 2)
+print(str[thirdCharIndex])
 
+//thirdCharIndex = str.index(str.endIndex, offsetBy: 2) // error! end를 기준으로 할 때는 반드시 음수
+thirdCharIndex = str.index(str.endIndex, offsetBy: -3)
+print(str[thirdCharIndex])
 
-
-
-
-
-
-
-
-
-
-
-
-
+// 인덱스 범위를 확신할 수 없다면 반드시 확인
+if thirdCharIndex < str.endIndex && thirdCharIndex > str.startIndex {
+    
+}

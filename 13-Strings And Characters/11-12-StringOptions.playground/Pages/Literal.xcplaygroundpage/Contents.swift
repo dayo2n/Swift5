@@ -26,20 +26,20 @@ import Foundation
 /*:
  # Literal Option
  */
+let a = "\u{D55C}"
+let b = "\u{1112}\u{1161}\u{11AB}"
 
 
+// 시각적으로 같은 문자면 true를 반환
+a == b
+a.compare(b) == .orderedSame
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 구성값이 다르므로 false를 반환
+a.compare(b, options: [.literal]) == .orderedSame
+// literal 옵션을 쓰는 것이 훨씬 빠름
+// why?
+/*
+ 리터럴을 사용하지 않으면 : 코드 유닛으로 문자를 구성 -> 최종 결과가 시각적으로 같은지를 반환
+ 리터럴을 사용 : 값을 비교
+ */
 //: [Next](@next)

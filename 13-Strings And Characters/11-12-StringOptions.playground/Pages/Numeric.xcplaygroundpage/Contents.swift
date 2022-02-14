@@ -27,13 +27,16 @@ import UIKit
  # Numeric Option
  */
 
+"A" < "B"
 
+"a" < "B"
 
+let file9 = "file9.txt"
+let file10 = "file10.txt"
 
+file9 < file10
+file9.compare(file10) == .orderedAscending
 
-
-
-
-
-
+// 문자열에 포함된 숫자를 숫자 자체로 비교하기 때문에 true가 나오게 된다!
+file9.compare(file10, options: [.numeric]) == .orderedAscending
 //: [Next](@next)

@@ -24,16 +24,12 @@ import UIKit
 /*:
  # Case Insensitive Option
  */
+// Swift에는 아홉가지 문자열 옵션을 제공한다!
+// option 파라미터를 가진다면 모두 사용 가능하다.
 
+"A" == "a"
 
+"A".caseInsensitiveCompare("a") == .orderedSame
 
-
-
-
-
-
-
-
-
-
+"A".compare("a", options: [.caseInsensitive]) == .orderedSame
 //: [Next](@next)

@@ -26,21 +26,40 @@ import Foundation
 /*:
  # Anchored Option
  */
+// Backward 옵션과 혼동하지 않기!
+// Anchored Option은 전체문자열을 대상으로 검색하지 않고 시작부분을 문자열 앞부분, 끝부분으로 제한한다.
 
+let str = "Swift Programming"
 
+if let result = str.range(of: "Swift", options: [.backwards]) { // trailing -> leading
+    print(str.distance(from: str.startIndex, to: result.lowerBound))
+} else {
+    "not found"
+}
 
+if let result = str.range(of: "Swift", options: [.anchored]) { // leading 부분만 검사
+    print(str.distance(from: str.startIndex, to: result.lowerBound))
+} else {
+    "not found"
+}
 
+if let result = str.range(of: "Swift", options: [.anchored, .backwards]) { // trailing 부분만 검사
+    print(str.distance(from: str.startIndex, to: result.lowerBound))
+} else {
+    "not found"
+}
 
+str.hasPrefix("swift")
+str.hasSuffix("swift")
 
+str.lowercased().hasPrefix("swift")
+if let _ = str.range(of: "swift", options: [.anchored, .caseInsensitive]) {
+    print("same prefix")
+}
 
-
-
-
-
-
-
-
-
-
+str.hasSuffix("programming")
+if let _ = str.range(of: "programming", options: [.anchored, .backwards, .caseInsensitive]) {
+    print("same suffix")
+}
 
 //: [Next](@next)

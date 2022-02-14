@@ -24,74 +24,56 @@ import UIKit
 /*:
  # Strings and Characters
  */
+let s = "String"
+let c : Character = "C"
 
+//let emptyChar: Character = "" //아무것도 없는 빈 문자는 문자열String로 인식됨.
+// Character로 저장하고 싶다면 공백을 포함하도록 함
+let emptyChar: Character = " "
+var emptyString = " " // 빈문자 아님
+emptyString.count
 
+emptyString = "" // 이게 빈문자
+emptyString.count
 
-
-
-
-
-
-
-
-
-
+// 생성자로 빈 문자열을 생성해보자
+let emptyString2 = String()
 /*:
  ## String Types
  */
+//String은 구조체, 값 형식 : Swift String
+// 참조형으로 쓰고싶다면 NSString을 이용, Foundation String
+var nsstr : NSString = "str"
 
-
-
-
-
-
-
-
-
+//let swiftStr : String = nsstr // error!
+// 두 자료형은 호환되지만 바로 변환되지는 않음 => type casting이 필요
+let swiftStr : String = nsstr as String
+nsstr = swiftStr as NSString
 
 
 
 /*:
  ## Mutability
  */
+// 문자열의 가변성 var : let
+let immutableStr = "str"
+// immutableStr = "new str" // 불가변
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var mutableStr = "str"
+mutableStr = "new str"
 
 /*:
  ## Unicode
  */
 
+let str = "Swift String"
 
+str.utf8
+str.utf16
 
+var thumbUp = "🍯" // ctrl + cmd + spcae를 누르면 이모티콘 창이 뜸
+thumbUp = "\u{1F970}"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//🥰
+//하트가 달린 웃는 얼굴
+//유니코드: U+1F970, UTF-8: F0 9F A5 B0

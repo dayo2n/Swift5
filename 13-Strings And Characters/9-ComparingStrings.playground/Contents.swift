@@ -24,18 +24,34 @@ import UIKit
 /*:
  # Comparing Strings
  */
+let largeA = "Apple"
+let smallA = "apple"
+let b = "Banana"
+
+largeA == smallA
+largeA != smallA
+
+largeA < smallA
+largeA < b // 대문자가 소문자보다 작음
+smallA < b // 사전순으로 생각하면 틀린 것 같겠지만 아스키코드로 보면 a(97)가 b(98)보다 작음
+
+largeA.compare(smallA) == .orderedSame // 문자열이 같은지 비교하고 싶다면
+// 대소문자를 구분하지않고 비교하고싶다면
+largeA.caseInsensitiveCompare(smallA) == .orderedSame
+largeA.compare(smallA, options: [.caseInsensitive]) == .orderedSame
 
 
 
 
 
 
+let str = "Hello, Swift Pogramming!"
+let prefix = "hello"
+let suffix = "Programming"
 
+str.hasPrefix(prefix)
+str.hasSuffix(suffix)
 
-
-
-
-
-
-
-
+// 대소문자를 구분하지않고 접두사를 비교하는 방법
+// 원본 문자를 모두 소문자로 바꾸고 비교하려는 문자열도 소문자로 바꾸어 비교하면 대소문자를 구분하지않고 비교할 수 있다.
+str.lowercased().hasPrefix(prefix.lowercased())

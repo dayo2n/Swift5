@@ -26,20 +26,29 @@ import Foundation
 /*:
  # Regular Expression
  */
+let emailPattern = "([0-9a-zA-Z_-]+)@([0-9a-zA-Z-]+)(\\.[0-9a-zA-Z_-]+){1,2}"
+let emailAddress = "user@example.com"
 
+if let _ = emailAddress.range(of: emailPattern) {
+    print("found")
+} else {
+    print("not found")
+}
+// faild to Optional Binding
 
+// 정규표현식 옵션을 추가
+if let _ = emailAddress.range(of: emailPattern, options: [.regularExpression]) {
+    print("found")
+} else {
+    print("not found")
+}
+// 올바른 이메일 주소라고 판단해도 될까? => 아님! emailAddress = "user@example.com😎"라고 했을때도 optional binding이 성공하여 range 메소드는 단지 range를 리턴해줄 뿐이므로
 
-
-
-
-
-
-
-
-
-
-
-
-
+// 인자를 추가하여 리턴된 range가 입력된 문자열의 전체 문자와 같다면 올바른 이메일임을 확인할 수 있다!
+if let range = emailAddress.range(of: emailPattern, options: [.regularExpression]), (range.lowerBound, range.upperBound) == (emailAddress.startIndex, emailAddress.endIndex) {
+    print("found")
+} else {
+    print("not found")
+}
 
 //: [Next](@next)
