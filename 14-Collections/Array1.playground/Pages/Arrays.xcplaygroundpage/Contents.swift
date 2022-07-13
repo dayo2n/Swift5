@@ -28,16 +28,9 @@
  ## Array Literal
  ![array-literal](array-literal.png)
  */
-
-
-
-
-
-
-
-
-
-
+// sqare bracket 사이에 자료형 하나가 들어간건 배열이고,
+// nums처럼 square bracket 사이에 숫자가 여러 개 들어간건 array literal ..?
+let nums = [1, 2, 3]
 
 
 /*:
@@ -46,20 +39,10 @@
  ![array-type2](array-type2.png)
  */
 
+// 배열의 자료형은 단축 문법 - [아래], 정식문법 - 제네릭<위>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+let strArray : Array<String>
+let strArrays2 : [String] 
 
 
 //: [Next](@next)

@@ -28,42 +28,44 @@ import Foundation
  ## Creating an Array
  */
 
+let nums = [1, 2, 3]
+let emptyArray : [Int] = [] // vacant literal : 형식 추론 불가, 타입 지정 필요
 
+let emptyArray2 = Array<Int>()
+let emptyArray3 = [Int]()
 
-
-
-
-
-
-
-
-
-
-
+let zeroArray = [Int](repeating: 0, count: 10) // 0이 10개가 채워진 정수 배열이 생성 됨
 
 /*:
  ## Inspecting an Array
  */
 
+nums.count
 
+nums.count == 0
 
-
-
-
+nums.isEmpty
+emptyArray.isEmpty
 
 
 /*:
  ## Accessing Elements
  */
 
+let fruits = ["Apple", "Banana", "Melon"]
 
+fruits[0]
 
+fruits[2]
 
+fruits[0...1]
 
+fruits[fruits.startIndex]
 
+//fruits[fruits.endIndex] // error! endIndex는 정말 마지막 인덱스가 아니다. 인덱스는 0부터 시작하므로
+fruits[fruits.endIndex - 1]
+fruits[fruits.index(before: fruits.endIndex)]
 
-
-
-
-
-
+fruits.first
+fruits.last
+//emptyArray[0] // error! array is vacant

@@ -20,6 +20,7 @@
 //  THE SOFTWARE.
 //
 import UIKit
+import Foundation
 
 /*:
  # Comparing Arrays
@@ -28,61 +29,64 @@ import UIKit
 let a = ["A", "B", "C"]
 let b = ["a", "b", "c"]
 
+a == b
+a != b
 
+a.elementsEqual(b)
 
-
-
-
-
-
-
-
-
-
-
-
+a.elementsEqual(b) { (lhs, rhs) -> Bool in
+    return lhs.caseInsensitiveCompare(rhs)
+    == .orderedSame
+}
 
 /*:
  # Finding Elements
  */
 
+let nums = [1, 2, 3, 1, 4, 5, 2, 6, 7, 5, 0]
+
+nums.contains(2)
+nums.contains(8)
+
+nums.contains { (n) -> Bool in
+    return n % 2 == 0
+}
+
+// 가장 처음에 검색된 요소의 값을 반환
+nums.first { (n) -> Bool in
+    return n % 2 == 0
+}
 
 
+// r가장 처음에 검색된 요소의 인덱스를 반환
+nums.firstIndex{ (n) -> Bool in
+    return n % 2 == 0
+}
 
-
-
-
-
-
-
-
-
+nums.firstIndex(of: 1)
+nums.lastIndex(of: 1)
 
 /*:
  # Sorting on Array
  */
 
+nums.sorted()
+nums
+
+nums.sorted{ (a, b) -> Bool in
+    return a > b
+}
+
+nums.sorted().reversed() // 배열이 아니라 컬렉션을 리턴, 배열을 생성하고 싶으면 배열 생성자를 지정
+[Int] (nums.sorted().reversed())
 
 
+// 가변 배열을 정렬해보자
+var mutableNums = nums
 
+mutableNums.sort()
+mutableNums.reverse()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+mutableNums
+mutableNums.swapAt(0, 1)
+mutableNums.shuffle() // 요소의 순서가 랜덤으로 바뀜

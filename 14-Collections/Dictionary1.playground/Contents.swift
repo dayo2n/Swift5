@@ -25,98 +25,51 @@ import Foundation
  ## Dictionary Literal
  ![dictliteral](dict-literal.png)
  */
+// Single Type 키와 값의 자료형은 각각이 모두 같아야 함 (키와 값의 자료형이 서로 다를 수는 있음)
 
+var dict = ["A" : "Apple", "B": "Banana"]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+dict = [:]
 
 /*:
  ## Dictionary Type
  ![type1](dict-type.png)
  ![type2](dict-type2.png)
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let dict1: Dictionary<String, Int>
+let dict2: [String: Int] // 단축문법
 /*:
  ## Creating a Dictionary
  */
+let words = ["A": "Apple", "B": "Banana", "C":"City"]
 
+let emptyDict: [String: String] = [:] // 형을 명시해줘야 빈 딕셔너리 선언 가능
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+let emptyDict2 = [String: String]()
+let emptyDict3 = Dictionary<String, String>()
 /*:
  ## Inspecting a Dictionary
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+words.count
+words.isEmpty
 /*:
  ## Accessing Keys and Values
  */
+words["A"]
+words["Apple"] // key로 value를 검색하기 때문에 nil
+
+let a = words["E"]
+let b = words["E", default: "Empty"] // default value를 함께 전달하면, 해당 키가 없으면 디폴트값 반환
+
+for k in words.keys.sorted() { // 정렬도 가능
+    print(k)
+}
+
+for v in words.values {
+    print(v)
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 배열로 바꾸고 싶다면
+let keys = Array(words.keys)
+let values = Array(words.values)
