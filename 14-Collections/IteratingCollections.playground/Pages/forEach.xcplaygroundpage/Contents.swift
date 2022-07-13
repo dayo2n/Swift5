@@ -26,12 +26,48 @@ import Foundation
 /*:
  ## forEach
  */
+// 함수형 패러다임으로 코드를 작성할 때 자주 사용
+// 반복적으로 실행하는 코드를 클로저 파라미터로 받음
+print("Array", "============")
+let arr = [1, 2, 3]
+arr.forEach { (num) in
+    print(num)
+}
+
+print("Set", "============")
+let set: Set = [1, 2, 3]
+set.forEach { num in
+    print(num)
+}
+
+print("Dictionary", "============")
+let dict = ["A": "1", "B": "2", "C": "3"]
+dict.forEach { elem in
+    print(elem.key, elem.value)
+}
 
 
 
+func withForIn() {
+    print(#function)
+    let arr = [1, 2, 3]
+    for num in arr {
+        // 내부에서 break나 continue를 사용할 수 있음
+        print(num)
+        return //  반복문 자체를 중지
+    }
+}
+
+func withForEach() {
+    print(#function)
+    let arr = [1, 2, 3]
+    arr.forEach { num in
+        // forEach문은 반복문이 아니므로 break나 continue를 사용할 수 없음
+        print(num)
+        return // 지금 실행하는 클로저 코드를 중지
+    }
+}
 
 
-
-
-
-
+withForIn()
+withForEach()
