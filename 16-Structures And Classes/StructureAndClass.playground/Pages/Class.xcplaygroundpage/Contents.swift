@@ -28,27 +28,31 @@ import Foundation
  ![Class](class.png)
  */
 
+class Person {
+    var name = "John Doe"
+    var age = 0
+    
+    func speak() {
+        print("Hello")
+    }
+}
+
+let p = Person()
+
+// Structure vs Class
+/*
+ +------------------+------------------+------------------+
+ |                  |Structure         |Class             |
+ +==================+==================+==================+
+ |Type              | Value Type       | Reference Type   |
+ |Deinitializer     | X                | O                |
+ |Inheritance       | X                | O                |
+ |Reference Counting| X                | O                |
+ +------------------+------------------+------------------+
+ */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 구조체와 클래스는 저장공간을 처리하는 방식에 차이가 있음.
+// 구조체는 스택에 값을 저장, 값을 전달할 때마다 복사본 생성
+// 클래스는 힙에 저장, -> 스택에는 힙에 저장된 값을 전달, -> 복사본 생성하지 않고 주소만 전달 (참조형)
 
