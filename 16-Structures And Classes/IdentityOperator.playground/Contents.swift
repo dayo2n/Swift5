@@ -25,13 +25,19 @@ import UIKit
  # Identity Operator
  ![identity-op](identity-op.png)
  */
+// 항등 연산자
+// 메모리 주소 비교시 사용
 
+class A {
+    
+}
 
+let a = A()
+let b = a
+let c = A()
 
+a === b
+a !== b
 
-
-
-
-
-
-
+a === c
+a !== c
