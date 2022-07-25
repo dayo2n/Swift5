@@ -26,18 +26,22 @@ import UIKit
  ![nested-type](nested-type.png)
  */
 
+class One {
+    struct Two { // nested type
+        enum Three { // enum도 가능, 포함 단계도 제한없음
+            case a
+            
+            class Four {
+                
+            }
+        }
+    }
+    
+//    var a = One.Two()
+//    One 클래스 내부에서는 nested 구조체를 바로 인식할 수 있어서 도트로 접근하지 않아도 됨
+    var a = Two()
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//let two: Two = Two() // Two 구조체는 One class 내부에 선언되어있으므로 error
+let two: One.Two = One.Two()
 
