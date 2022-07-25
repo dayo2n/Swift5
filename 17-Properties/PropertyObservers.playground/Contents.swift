@@ -26,7 +26,20 @@ import UIKit
  ![property-observer](property-observer.png)
  */
 
+// 속성 감시자
+// willSet: 속성에 값이 지정되기 전에 호출, newValue라는 기본 파라미터가 제공
+// didSet: 값이 저장된 직후에 호출 -> 이전 값이 파라미터로 전달, oldValue가 기본 파라미터로 제공됨
+
 class Size {
-   var width = 0.0
+    var width = 0.0 {
+        willSet {
+            print(width, "=>", newValue)
+        }
+        didSet {
+            print(oldValue, "=>", width)
+        }
+    }
 }
 
+let s = Size()
+s.width = 123

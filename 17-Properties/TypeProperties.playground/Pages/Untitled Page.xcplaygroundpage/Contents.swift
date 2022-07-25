@@ -28,12 +28,16 @@ import UIKit
  ![type1](type1.png)
  ![type2](type2.png)
  */
+// 저장 형식 속성. 속성에 최초로 접근할 때 초기화됨
 
+class Math {
+    static let pi = 3.14
+}
 
+let m = Math()
+//m.pi // error! pi는 형식 속성이므로 형식 이름을 통해 접근해야함
 
-
-
-
+Math.pi // 지연 저장 속성과 같음
 
 /*:
  ## Computed Type Properties
@@ -41,13 +45,15 @@ import UIKit
  ![type4](type4.png)
  */
 
+enum Weekday: Int {
+    case sunday = 1, monday, tuesday, wednesday, thursday, friday, saturday
+    
+    static var today: Weekday {
+        let cal = Calendar.current
+        let today = Date()
+        let weekday = cal.component(.weekday, from: today)
+        return Weekday(rawValue: weekday)!
+    }
+}
 
-
-
-
-
-
-
-
-
-
+Weekday.today

@@ -26,6 +26,7 @@ import UIKit
  ![computed](computed.png)
  */
 
+// computed : 수학적으로 계산되는 것이 아닌 다른 속성을 기반으로 속성값이 결정된다는 뜻
 
 class Person {
    var name: String
@@ -35,18 +36,29 @@ class Person {
       self.name = name
       self.yearOfBirth = year
    }
+    
+    var age: Int { // Int 뒤에 할당 연산자를 사용하면 클로저, 없으면 읽기 전용 (Read-Only)
+//        get {
+            let calendar = Calendar.current
+            let now = Date()
+            let year = calendar.component(.year, from: now)
+            return year - yearOfBirth
+//        }
+        
+//        set {
+//            let calendar = Calendar.current
+//            let now = Date()
+//            let year = calendar.component(.year, from: now)
+//            yearOfBirth = year - newValue
+//        }
+    }
 }
 
+let p = Person(name: "John Doe", year: 2002)
+p.age
 
-
-
-
-
-
-
-
-
-
+//p.age = 50 // p.yearOfBirth가 1972로 다시 설정됨
+p.yearOfBirth // setter가 없으면 읽기 전용
 
 
 /*:
@@ -55,14 +67,9 @@ class Person {
  ![readonly-2](readonly-2.png)
  */
 
+//get 키워드와 brace 삭제 가능
 
-
-
-
-
-
-
-
-
+// get block을 생략하고 set block만 쓰는 것은 허용되지 않음
+// => 쓰기 전용 computed property는 없다
 
 
