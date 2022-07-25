@@ -26,33 +26,29 @@ import UIKit
  ![init](init.png)
  */
 
+let str = "123"
+let num = Int(str)
 
+class Position {
+    var x: Double
+    var y: Double
+    
+    init() {
+        x = 0.0
+        y = 0.0
+        // 모든 속성을 초기화하지않으면 error
+    }
+    
+    init(value: Double) {
+        x = value
+        y = value
+    }
+}
 
+let a = Position()
+a.x
+a.y
 
-
-
-
-
-
-
-
-
-
-/*:
- ![call-init](call-init.png)
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let b = Position(value: 100)
+b.x
+b.y

@@ -20,9 +20,54 @@
 //  THE SOFTWARE.
 //
 import UIKit
-
 /*:
  # Value Types and Reference Types
  ![val-ref](val-ref.png)
  */
+struct PositionValue {
+    var x = 0.0
+    var y = 0.0
+}
 
+class PositionObject {
+    var x = 0.0
+    var y = 0.0
+}
+
+var v = PositionValue()
+var o = PositionObject()
+
+var v2 = v // 복사
+var o2 = o // 참조
+
+v2.x = 12
+v2.y = 34
+
+v
+v2
+
+// 복사된 것이므로 두 객체는 다른 객체, 따라서 속성값도 각각 가짐
+
+
+o2.x = 12
+o2.y = 34
+
+o
+o2
+
+// 참조되는 객체이므로 속성값을 공유함
+
+
+// 그렇다면 언제 구조체, 언제 클래스로 구현해야 할까
+
+// 일반적인 규칙
+
+// - 객체지향 프로그래
+// 대부분 참조형식인 클래스로 구현
+// 연관된 상수그룹을 표현할 때는 열거형
+// 코드 내에서 한번만 사용되는 형식은 튜플
+// 나머지 값형식은 구조체 : 상대적으로 적은 데이터를 저장하고 상속이 필요하지 않은 경우, 값 전달 시점마다 복사본이 필요한 경우 값형식인 구조체
+
+// - 함수형, 프로토콜 지향 프로그래밍
+// 주로 구조체로 구현
+// 상속이나 참조 전달 필요시에만 클래스로 구현
