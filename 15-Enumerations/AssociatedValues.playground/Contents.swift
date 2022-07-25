@@ -26,21 +26,26 @@ import UIKit
  ![associated-values](associated-values.png)
  */
 
+// enumeration case에 연관값을 함께 저장
+enum VideoInterface {
+    case dvi(width: Int, height: Int) // 위에 보기에서는 un-named tuple로 저장하고있는데, named tuple로도 저장 가능
+    case hdmi(Int, Int, Double, Bool)
+    case displayPort(CGSize) // CGSize 구조체로
+}
 
+var input = VideoInterface.dvi(width: 2048, height: 1536)
 
+switch input {
+case .dvi(width: 2048, height: 1536):
+    print("dvi 2048 x 1536")
+case .dvi(2048, _):
+    print("dvi 2048 x Any")
+case .dvi:
+    print("dvi")
+case .hdmi(let width, let height, let version, let audioEnabled):
+    print("hdmi \(width) x \(height)")
+case let .displayPort(size):
+    print("dp")
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+input = .hdmi(3840, 2160, 2.1, true) // 열거형의 타입은 같으므로 다른 형식의 Associated values의 값을 넣는 것은 상관없음 오류안남
