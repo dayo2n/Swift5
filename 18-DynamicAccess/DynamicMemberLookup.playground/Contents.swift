@@ -25,17 +25,38 @@ import UIKit
 /*:
  # Dynamic Member Lookup
  */
+// python과의 호환성을 위한 문법
 
+@dynamicMemberLookup // subscript를 반드시 필요함
 struct Person {
    var name: String
    var address: String
+    
+    subscript(dynamicMember member: String) -> String {
+        // argument label은 반드시 dynamicMember, String 형이어야함 (리턴타입은 상관없음)
+        switch member {
+        case "nameKey":
+            return name
+        case "addressKey":
+            return address
+        default:
+            return "n/a" // not available
+        }
+    }
+    
 }
 
+let p = Person(name: "James", address: "seoul")
+p.name
+p.address
 
+p[dynamicMember: "nameKey"]
+p[dynamicMember: "addressKey"]
 
+p.nameKey
+p.addressKey
 
+p.missingKey
 
-
-
-
-
+// 대상에 접근하는 시점이 런타임이기 때문에
+// 도트를 이용해 자동완성이 지원되지 않아 오타가 발생할 수 있는 단점이 있음
