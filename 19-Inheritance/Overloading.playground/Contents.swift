@@ -25,6 +25,52 @@ import UIKit
  # Overloading
  */
 
+// Overloading Rule #2. 함수 이름, 파라미터 수가 동일하면 파라미터 자료형으로 식별
+func process(value: Int) {
+    print("process Int")
+}
+
+func process(value: String) {
+    print("process String")
+}
 
 
+// Overloading Rule #1. 함수이름이 동일하면 파라미터 수로 식별
+func process(value: String, anotherValue: String) {
+    
+}
 
+// Overloading Rule #3. 이름, 파라미터가 동일하면 Argument label로 식별
+func process(_ value: String) {
+    
+}
+
+process(value: 0)
+process(value: "String")
+
+// Overloading Rule #4. 이름, 파라미터, Argument label이 동일하면 리턴형으로 식별
+func process(value: Double) -> Int {
+    return Int(value)
+}
+
+func process(value: Double) -> String? {
+    return String(value)
+}
+
+//process(value: 12.34) // error! return형을 지정해야
+let result: Int = process(value: 12.34) as Int
+
+struct Rectangle {
+    func area() -> Double {
+        return 0.0
+    }
+    
+    static func area() -> Double {
+        return 0.1
+    }
+}
+
+// 인스턴스 메소드와 타입메소드로 구현해도 상관없음
+let r = Rectangle()
+r.area()
+Rectangle.area()

@@ -26,21 +26,42 @@ import UIKit
  ![inheritance](inheritance.png)
  */
 
+class Figure {
+    var name = "Unknown"
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func draw() {
+        print("draw \(name)")
+    }
+}
 
+class Circle: Figure { // 상속
+    var radius = 0.0
+}
 
+let c = Circle(name: "Circle")
+c.radius
+c.name
+c.draw()
 
-
-
+// subclass는 superclass로부터 멤버를 상속받음
 
 /*:
  ## final class
  ![final class](final-class.png)
  */
 
+// final class는 상속이 금지된 클래스
+final class Rectangle: Figure {
+    var width = 0.0
+    var height = 0.0
+}
 
+//class Square: Rectangle {
+//
+//}
 
-
-
-
-
-
+// error! final 클래스는 상속 불가

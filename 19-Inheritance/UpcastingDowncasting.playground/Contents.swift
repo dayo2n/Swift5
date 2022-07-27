@@ -20,9 +20,10 @@
 //  THE SOFTWARE.
 //
 import UIKit
+import Foundation
 
 /*:
- # Upcasting & Download Casting
+ # Upcasting & Downcasting
  */
 
 class Figure {
@@ -51,10 +52,33 @@ class Square: Rectangle {
    
 }
 
+let f = Figure(name: "Unknown")
+f.name
+
+let r = Rectangle(name: "Rect")
+r.width
+r.width
+r.name
 
 
+let s: Figure = Square(name: "Square") // Upcasting 서브클래스 인스턴스를 슈퍼클래스 형식으로 저장
+//s.width // 서브클래스인 Square는 width 속성이 정의되어있지 않으므로 접근 불가
+//s.height
+s.name
 
 
+// downcasting
+// upcasting과 달리 안전하지 않음 == 에러 발생 가능
+
+let downcastedS = s as! Square // type casting operator : as
+downcastedS.name
+downcastedS.width
+downcastedS.height
 
 
+class Rhombus: Square {
+    var angle = 45.0
+}
+
+//let dr = s as! Rhombus // error! 원본클래스보다 하위에 있다면 타입캐스팅 불가능, 메모리적으로 예외가 발생할 수 있기 때문에
 

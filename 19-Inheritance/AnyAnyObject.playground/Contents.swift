@@ -25,34 +25,37 @@ import Foundation
 /*:
  # Any, AnyObject
  */
+// general type
+
+// Any는 값형식, 참조형식을 가리지않음
+var data: Any = 1
+data = 2.3
+data = "str"
+data = [1, 2, 3]
+data = NSString()
 
 
+var obj: AnyObject = NSString()
+//obj = 1
 
-
-
-
-
-
-
-
-
+if let str = data as? String {
+    print(str.count)
+} else if let list = data as? [Int] {
+    // 배열이 저장되어있을 경우 실행될 부분
+}
 
 /*:
  # Type Casting Pattern
  */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+switch data {
+case let str as String:
+    print(str.count)
+case let list as [Int]:
+    print(list.count)
+case is Double:
+    print("Double Value")
+default:
+    break
+}
