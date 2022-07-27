@@ -28,21 +28,32 @@ import UIKit
  ![call](call.png)
  */
 
+// 형식에 연관된 메소드
 
+class Circle {
+    static let pi = 3.14 // type property
+    var radius = 0.0 // instance property
+    
+    // instance method
+    func getArea() -> Double {
+        return radius * radius * Circle.pi // 타입 속성은 클래스이름으로 접근
+    }
+    
+    static func printPi() { // --> class func printPi()로 선언해야 서브클래스에서 오버라이드 가능
+        print(pi)
+        // 타입메소드에서는 타입 이름없이 타입속성에 접근가능
+        // 반면, 인스턴스 멤버에는 직접 접근 불가
+    }
+}
 
+// type method
+Circle.printPi()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class StrokeCircle: Circle {
+    // static 키워드로 선언한 메소드를 서브클래스에서 오버라이드할 수 없음이 핵심, 인스턴스 메소드에도 동일한 규칙
+//    override static func printPi() {
+//        print(pi)
+//    }
+    
+    // 서브클래스에서 오버라이드하는 메소드는 스태틱이 아니라 클래스로 선언되어야 정상적으로 오버라이드 가능
+}
