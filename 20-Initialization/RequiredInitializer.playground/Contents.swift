@@ -31,7 +31,8 @@ import Foundation
 class Figure {
    var name: String
 
-   init(name: String) {
+    // 필수 생성자
+   required init(name: String) {
       self.name = name
    }
 
@@ -43,6 +44,19 @@ class Figure {
 class Rectangle: Figure {
    var width = 0.0
    var height = 0.0
+    
+    init() {
+        width = 0.0
+        height = 0.0
+        super.init(name: "unknown")
+    }
+    
+    // super class와 동일한 생성자를 반드시 작성해야 함
+    required init(name: String) {
+        width = 0.0
+        height = 0.0
+        super.init(name: name)
+    }
 }
 
 

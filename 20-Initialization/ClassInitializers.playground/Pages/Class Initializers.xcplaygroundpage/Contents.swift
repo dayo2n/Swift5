@@ -29,15 +29,20 @@ import UIKit
  ![convenience](convenience.png)
  */
 
-
-
-
-
-
-
-
-
-
+class Position {
+    var x: Double
+    var y: Double
+    
+    // 모든 속성을 초기화하는 designated initializer
+    init(x: Double, y: Double) {
+        self.x = x
+        self.y = y
+    }
+    
+    convenience init(x: Double) {
+        self.init(x: x, y: 0.0)
+    }
+}
 
 //: [Next](@next)
 

@@ -36,21 +36,39 @@ class Figure {
    func draw() {
       print("draw \(name)")
    }
+    
+    convenience init() {
+        self.init(name: "unknown")
+    }
 }
 
 class Rectangle: Figure {
-   var width: Double
-   var height: Double
+    var width: Double = 0.0
+    var height: Double = 0.0
+    
+    init(name: String, width: Double, height: Double) {
+        // 1. 현재 클래스에 있는 속성을 먼저 초기화
+        self.width = width
+        self.height = height
+        
+        // 2. 상위 클래스에 있는 속성은 super.init()을 호출
+        super.init(name: name)
+    }
+    
+    override init(name: String) { // designated initializer를 오버라이드
+        width = 0
+        height = 0
+        super.init(name: name)
+    }
+    
+    // designated initializer와 달리 오버라이드라는 개념이 적용되지 않음
+    // 항상 동일한 클래스에 있는 다른 이니셜라이저를 호출 -> Rectangle의 Default initializer가 호출될듯
+    convenience init() {
+        self.init(name: "unknown")
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-//: [Next](@next)
+let r = Rectangle()
+r.name
+r.width
+r.height
