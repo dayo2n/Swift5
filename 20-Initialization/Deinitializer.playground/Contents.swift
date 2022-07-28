@@ -26,6 +26,10 @@ import UIKit
  ![deinit](deinit.png)
  */
 
+// 소멸자
+// 우리가 직접 호출하지않으므로 직접 호출하는 문법은 제공되지 않음
+// deinit은 인스턴스가 메모리에서 제거되기 직전에 자동으로 호출
+
 class Size {
    var width = 0.0
    var height = 0.0
@@ -39,4 +43,11 @@ class Position {
 class Rect {
    var origin = Position()
    var size = Size()
+    
+    deinit {
+        print("deinit \(self)")
+    }
 }
+
+var r: Rect? = Rect()
+r = nil
