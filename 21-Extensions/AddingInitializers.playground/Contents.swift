@@ -20,20 +20,54 @@
 //  THE SOFTWARE.
 //
 import UIKit
+import Foundation
 
 /*:
  # Adding Initializers
  */
 
+extension Date {
+    init?(year: Int, month: Int, day: Int) {
+        let cal = Calendar.current
+        var comp = DateComponents()
+        comp.year = year
+        comp.month = month
+        comp.day = day
+        
+        guard let date = cal.date(from: comp) else { return nil }
+        
+        self = date
+    }
+}
+
+Date(year: 1998, month: 3, day: 12)
+
+
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        self.init(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: 1.0)
+    }
+}
+
+UIColor(red: 0, green: 0, blue: 255)
 
 
 
 
 
+// default initializer, memberwise initializer
+struct Size {
+    var width = 0.0
+    var height = 0.0
+}
 
-
-
-
-
-
-
+extension Size {
+    // extension이 아니라 구조체 안에 작성하면 아래 두 개 에러발생 -> 파라미터가 없거나 두 개인 생성자를 따로 구현해야 함.
+    init(value: Double) {
+        width = value
+        height = value
+    }
+}
+Size()
+Size(width: 12, height: 34)

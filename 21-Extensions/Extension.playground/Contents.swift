@@ -26,11 +26,27 @@ import UIKit
  ![syntax](extension.png)
  ![syntax2](extension-protocol.png)
  */
+// 형식을 확장하기 사용 : class, structure, enumeration, protocol
+// adding members 가능, overriding members 불가능
 
 struct Size {
     var width = 0.0
     var height = 0.0
 }
 
+extension Size {
+    var area: Double {
+        return width * height
+    }
+}
 
+let s = Size()
+s.width
+s.height
+s.area
 
+extension Size: Equatable {
+    public static func == (lhs: Size, rhs: Size) -> Bool {
+        return lhs.width == rhs.width && lhs.height == rhs.height
+    }
+}
