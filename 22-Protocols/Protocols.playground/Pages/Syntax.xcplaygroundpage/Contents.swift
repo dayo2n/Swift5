@@ -27,25 +27,40 @@ import UIKit
  ![protocol-inheritance](protocol-inheritance.png)
  */
 
-
-
-
-
+protocol Something {
+    func doSomething()
+}
 
 /*:
  # Adopting Protocols
  ![adopting](adopting.png)
  */
 
-
-
-
-
+// 상속과 프로토콜 채용을 동시에 한다면 수퍼클래스 이름을 먼저 나열
+struct Size: Something {
+    func doSomething() {
+        
+    }
+}
 
 /*:
  # Class-Only Protocols
  ![class-only](class-only.png)
  */
 
+// class에서만 채용가능하도록 하고싶다면 AnyObject를 상속하도록 함
+// 열거형이나 구조체에서는 채용 불가
 
+protocol SomethingObject: AnyObject, Something {
+    
+}
 
+//struct Value: SomethingObject {
+//    // error !
+//}
+
+class Object: SomethingObject {
+    func doSomething() {
+        // SomethingObject가 Something 프로토콜을 채용하고 있으므로 doSomething을 멤버로 구현해야 함
+    }
+}

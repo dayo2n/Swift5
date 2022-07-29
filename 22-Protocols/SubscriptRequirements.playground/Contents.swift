@@ -26,4 +26,17 @@ import UIKit
  ![subscript](subscript.png)
  */
 
+protocol List {
+    subscript(idx: Int) -> Int { get }
+}
 
+struct DeataStore: List {
+    subscript(idx: Int) -> Int {
+        get {
+            return 0
+        }
+        set {
+            
+        }
+    }
+}

@@ -57,7 +57,14 @@ let r = Rectangle()
 let c = Circle()
 
 
+let list: [Figure] = [t, r, c]
 
-
+for item in list {
+    item.draw()
+//    item.radus // error!!
+    if let c = item as? Circle {
+        c.radius
+    }
+}
 
 

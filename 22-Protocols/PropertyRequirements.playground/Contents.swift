@@ -26,14 +26,28 @@ import UIKit
  ![property](property.png)
  */
 
+protocol Figure {
+//    var name: String { get } // get이라는 요구사항이 따름
+    var name: String { get set } // 읽기-쓰기가 가능해야 함
+    // var앞에 static을 붙이면 채용하는 구조체의 name 멤버도 모두 스태틱 키워드가 붙어야 함
+}
 
+struct Rectangle: Figure {
+//    let name = "Rect" // 상수는 읽기만 가능
+    var name = "Rect"
+}
 
+struct Triangle: Figure {
+    var name = "Triangle"
+}
 
+struct Circle: Figure {
+    var name: String {
+        get {
+            return "Circle"
+        }
+        set {
 
-
-
-
-
-
-
-
+        }
+    }
+}

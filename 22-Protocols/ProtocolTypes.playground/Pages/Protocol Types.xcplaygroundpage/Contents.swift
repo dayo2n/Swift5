@@ -25,6 +25,7 @@ import Foundation
 /*:
  # Protocol Types
  */
+// First class Citizen
 
 protocol Resettable {
    func reset()
@@ -40,12 +41,10 @@ class Size: Resettable {
    }
 }
 
+let s = Size()
 
-
-
-
-
-
-
+let r: Resettable = Size()
+r.reset()
+// r.width // 접근 불가
 
 //: [Next](@next)

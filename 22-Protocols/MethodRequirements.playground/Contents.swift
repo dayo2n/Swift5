@@ -26,3 +26,30 @@ import UIKit
  ![method](method.png)
  */
 
+protocol Resettable {
+    static func reset()
+}
+
+class Size: Resettable {
+    var width = 0.0
+    var height = 0.0
+
+    func reset() {
+        width = 0.0
+        height = 0.0
+    }
+    
+    class func reset() { // overriding을 허용하는 동시에 프로토콜 요규사항을 충족
+        
+    }
+}
+
+//struct Size: Resettable {
+//    var width = 0.0
+//    var height = 0.0
+//
+//    mutating func reset() { // 값형식인 구조체에서 값을 바꿀땐 mutating 키워드가 필요함 -> 프로토콜에도 mutating 필요
+//        width = 0.0
+//        height = 0.0
+//    }
+//}

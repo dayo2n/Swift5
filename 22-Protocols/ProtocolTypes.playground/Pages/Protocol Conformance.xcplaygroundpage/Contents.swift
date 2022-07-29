@@ -23,6 +23,7 @@
 
 import UIKit
 
+// 프로토콜 적합성: 잘 채용하고 있는지
 /*:
  # Protocol Conformance
  ![is](is.png)
@@ -45,9 +46,12 @@ class Size: Resettable {
 
 let s = Size()
 
+s is Resettable
+s is ExpressibleByNilLiteral
 
 
+let r = Size() as Resettable
 
-
+r as? Size
 
 //: [Next](@next)
