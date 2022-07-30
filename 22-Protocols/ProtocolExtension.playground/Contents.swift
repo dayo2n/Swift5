@@ -25,10 +25,24 @@ import UIKit
  # Protocol Extension
  */
 
-protocol Figure {
+protocol Figure where Self: Equatable {
     var name: String { get }
     func draw()
 }
 
+extension Figure {
+    func draw() {
+        print("draw figure")
+    }
+}
 
+struct Rectangle: Figure {
+    var name = ""
+    
+    func draw() {
+        print("draw rectangle")
+    }
+}
 
+let r = Rectangle()
+r.draw()

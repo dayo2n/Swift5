@@ -25,13 +25,26 @@ import UIKit
  # Optional Protocol Requirements
  ![optional](optional.png)
  */
+// 그 optional 아님. 선택적이라는 뜻으로만 사용
+// @objc : objective-c에서도 사용가능하도록 하는 어노테이션
 
-protocol Drawable {
-   var strokeWidth: Double { get set }
-   var strokeColor: UIColor { get set }
-   func draw()
-   func reset()
+@objc protocol Drawable {
+    @objc optional var strokeWidth: Double { get set }
+    @objc optional var strokeColor: UIColor { get set }
+    func draw()
+    @objc optional func reset()
 }
 
+class Rectangle: Drawable {
+    func draw() {
+        
+    }
+}
 
+let r: Drawable = Rectangle()
+r.draw()
+r.strokeWidth
+r.strokeColor
 
+//r.reset() // optional protocol requirements는 구현이 안되어있을 수 있으므로 호출시 물음표를 붙여야함
+r.reset?()

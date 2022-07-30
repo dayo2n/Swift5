@@ -21,6 +21,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /*:
  # Protocol Composition
@@ -64,24 +65,13 @@ class Oval: Circle {
 let r: Resettable = Size()
 let p: Printable = Size()
 
+var rp: Resettable & Printable = Size()
+//rp = Circle() // error! resettable과 Printable을 모두 채용하는 객체만 가능
 
 /*:
  ![composition2](composition2.png)
  */
 
+var cr: Circle & Resettable = Circle()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+cr = Oval()
