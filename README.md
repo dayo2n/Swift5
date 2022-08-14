@@ -97,3 +97,12 @@
 - Named Tupes
 - Tuple Decomposition
 - Tuple Matching
+
+> Section 14. Collection 
+
+
+> Section 15. Enumeration
+> Section 16. Structure and Class
+> Section 17. Property
+> Section 18. Method and Subscript
+> Section 19. Inheritance and Polymorphism
