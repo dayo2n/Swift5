@@ -98,11 +98,29 @@
 - Tuple Decomposition
 - Tuple Matching
 
+> Section 13. String and Character
+- Strings and Characters
+- Multiline String Literals
+- Raw Strings (Swift 5+)
+- String Interpolation
+- New String Interpolation System (Swift 5+)
+- String indices
+- String Basics
+- Substring
+- String Editing
+- String Comparison
+- String Searching
+- String Options
+- Character Set
+
 > Section 14. Collection 
 
-
 > Section 15. Enumeration
+
 > Section 16. Structure and Class
+
 > Section 17. Property
+
 > Section 18. Method and Subscript
+
 > Section 19. Inheritance and Polymorphism
