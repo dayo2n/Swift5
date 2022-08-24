@@ -24,6 +24,7 @@ import Foundation
 
 /*:
  # Strong Reference Cycle
+ ##  강한 참조 사이클
  */
 
 
@@ -51,11 +52,20 @@ class Car {
 
 var person: Person? = Person()
 var rentedCar: Car? = Car(model: "Porsche")
+//Car 인스턴스의 #ref = 1, Person #ref = 1
 
 person?.car = rentedCar
+// 속성과 인스턴스가 강한 참조로 연결되어 Car 인스턴스의 #ref = 2 (rentedCar, person.car), Person #ref = 1
+// 인프런 강의 속 그림 참조
 
+rentedCar?.lessee = person
+// Car 인스턴스의 #ref = 2, Person #ref = 2
 
-
+person = nil
+// Car 인스턴스의 #ref = 2, Person #ref = 1 (rentedCar.lessee)
+rentedCar = nil
+// Car 인스턴스의 #ref = 1 (person.car), Person #ref = 1 (rentedCar.lessee)
+// 문제는 person와 rentedCar에는 nil로 초기화해서 두 인스턴스에 접근할 방법이 없음에도 참조 카운트는 각각이 1이다.
 
 
 

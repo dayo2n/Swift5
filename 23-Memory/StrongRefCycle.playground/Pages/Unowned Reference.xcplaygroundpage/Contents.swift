@@ -27,6 +27,7 @@ import Foundation
  # Unowned Reference
  ![unowned](unowned.png)
  */
+// 비소유 참조, 논옵셔널 참조
 
 class Person {
    var name = "John Doe"
@@ -39,7 +40,7 @@ class Person {
 
 class Car {
    var model: String
-   unowned var lessee: Person
+   unowned var lessee: Person // unowned keyword
 
    init(model: String, lessee: Person) {
       self.model = model
@@ -54,13 +55,11 @@ class Car {
 var person: Person? = Person()
 var rentedCar: Car? = Car(model: "Porsche", lessee: person!)
 
-person?.car = rentedCar
+person?.car = rentedCar // 두 변수가 서로를 참조
 
 person = nil
 rentedCar = nil
-
-
-
+// 제대로 해지되었다면 deinit이 로그에 추가되어야 함.
 
 
 

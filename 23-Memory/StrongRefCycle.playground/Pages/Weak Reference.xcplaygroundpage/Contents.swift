@@ -26,6 +26,7 @@ import Foundation
 /*:
  # Weak Reference
  ![weak](weak.png)
+ ### 강한 참조 사이클을 없애는 방법
  */
 
 class Person {
@@ -39,7 +40,7 @@ class Person {
 
 class Car {
    var model: String
-   weak var lessee: Person?
+   weak var lessee: Person? // 항상 옵셔널 형식으로 선언
    
    init(model: String) {
       self.model = model
@@ -54,24 +55,14 @@ var person: Person? = Person()
 var rentedCar: Car? = Car(model: "Porsche")
 
 person?.car = rentedCar
-rentedCar?.lessee = person
+// Car 인스턴스의 #ref = 2, Person #ref = 2
+
+rentedCar?.lessee = person // 참조하지만 소유하지는 않음 -> 참조 카운팅되지 않음
+// Car 인스턴스의 #ref = 2, Person #ref = 2
 
 person = nil
+// 참조 카운트가 0이 되고 메모리에서 제거된다. // Car 인스턴스의 #ref = 1, Person #ref = 0
 rentedCar = nil
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //: [Next](@next)
