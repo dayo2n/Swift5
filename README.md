@@ -1,18 +1,9 @@
-동계모각코: 안정꿀단지
+# [🍃 Inflearn: iOS 개발을 위한 Swift5 완벽 가이드](https://www.inflearn.com/course/Swift-KXcoding/dashboard)
 
-> 기간 : 21.12.27. ~ 22.01.31.
+#### 동계모각코: 안정꿀단지
+#### 기간 : 21.12.27. ~ 22.01.31.
 ---
-
-## [🍃 Inflearn: iOS 개발을 위한 Swift5 완벽 가이드](https://www.inflearn.com/course/Swift-KXcoding/dashboard)
-
-
-### Dashboard
-> Section 0.
-- Hello, Playground
-
-> Section 1. Hello, Swift
-- Hello, Swift
-- Hello, Swift Project : 스위프트 프로젝트 생성
+## Dashboard
 
 > Section 2. Warming up : 프로그래밍의 기초
 - Token, Expression, Statement
@@ -31,31 +22,19 @@
 - Numbers
 - Boolean
 - Strings and Characters
-- Type Inference
-- Type Safety
-- Type Conversion
-- Type Alias
+- Type Inference, Safety, Conversion, Alias
 
 > Section 5. Operators
 - Operator Basics
-- Arithmetic Operators
-- Overflow Operators
-- Comparison Operators
-- Logical Operators
-- Ternary Conditional Operator
+- Operators: Arithmetic, Overflow, Comparison, Logical, Ternary Conditional, Bitwise, Assignment, Range, Custom
 - Short-circuit Evaluation, Side Effect
-- Bitwise Operators
-- Assignment Operators
-- Range Operators
 - Operator Methods
-- Custom Operators
 
 > Section 6. Conditional Statements
 - if
 - switch
 - guard
-- Value Binding pattern
-- Expression pattern
+- Patterns: Value Binding, Expression
 
 > Section 7. Loop Statements
 - for-in Loop
@@ -63,8 +42,7 @@
 
 > Section 8. Control Transfer Statements, Labeled Statements
 - Control Transfer Statements
-- break
-- continue
+- break, continue
 - Labeled Statements
 
 > Section 9. Optionals
@@ -82,8 +60,7 @@
 - Argument Label
 - Variadic Parameters: 가변 파라미터
 - inout Parameter: 입출력 파라미터
-- Funciton Notation
-- Function Types
+- Funciton Notation, Types
 - Nested Functions
 
 > Section 11. Closures
@@ -95,8 +72,7 @@
 > Section 12. Tuples
 - Tuples
 - Named Tupes
-- Tuple Decomposition
-- Tuple Matching
+- Tuple Decomposition, Matching
 
 > Section 13. String and Character
 - Strings and Characters
@@ -104,23 +80,83 @@
 - Raw Strings (Swift 5+)
 - String Interpolation
 - New String Interpolation System (Swift 5+)
-- String indices
-- String Basics
+- String indices, Basics
 - Substring
-- String Editing
-- String Comparison
-- String Searching
-- String Options
+- String Editing, Comparison, Searching, Options
 - Character Set
 
 > Section 14. Collection 
+- Collections: Array, Dictionary, Set
+- Iterating Collections
 
 > Section 15. Enumeration
+- Enumeration Types
+- Raw Values
+- Associated Values
+- Enumeration Case Pattern
 
 > Section 16. Structure and Class
+- Structures and Classes
+- Initializer Syntax
+- Value Types vs Reference Types
+- Identity Operator
+- Nested Types
 
 > Section 17. Property
+- Stored Property
+- Computed Property
+- Property Observer
+- Type Property
+- self & super
 
 > Section 18. Method and Subscript
+- Instance Method
+- Type Method
+- Subscript
+- Dynamic Member Lookup
 
 > Section 19. Inheritance and Polymorphism
+- Inheritance
+- Overriding
+- Upcasting and Downcasting
+- Type Casting
+- Any and AnyObject
+- Overloading
+
+> Section 20. Initializer and Deinitializer
+- Initializers
+- Class Initializers
+- Required Initializer
+- Initializer Delegation
+- Failable initializer
+- Deinitializer
+
+> Section 21. Extension
+- Extension Syntax
+- Adding Properties, Methods, Initializers, Subscripts
+
+> Section 22. Protocol
+- Protocol Syntax
+- Property, Method, Initializer, Subscript, Optional Requirements
+- Protocol Types, composition, Extension
+
+> Section 23. Memory, Value Type and Reference Type
+- Memory Basics
+- Value Type vs Reference Type
+- ARC(Automatic Reference Counting)
+- Strong Reference Cycle
+- Closure Capture List
+
+> Section 24. Generics
+- Generic Function
+- Generic Types, Associated Types
+
+> Section 25. Error Handling
+- Error Handling
+- do-catch Statements
+- Optional try
+- defer Statemenst
+- Result Type (Swift 5+)
+
+> Section 26. Advanced Topics
+- Availability Condition
