@@ -6,15 +6,15 @@
 ## Dashboard
 
 > Section 2. Warming up : 프로그래밍의 기초
-- Token, Expression, Statement
-- Literal, Identifier, Keyword
-- Compile, Link, Run
-- Sepecial Characters
-- First Class Citizen
+- [Token, Expression, Statement](https://velog.io/@dayo2n/Swift-Token-Expression-Statement)
+- [Literal, Identifier, Keyword](https://velog.io/@dayo2n/Swift-Literal-Identifier-Keyword)
+- [Compile, Link, Run](https://velog.io/@dayo2n/Swift-Compile-Link-Run)
+- [Sepecial Characters](https://velog.io/@dayo2n/Swift-Special-Characters)
+- [First Class Citizen](https://velog.io/@dayo2n/Swift-First-Class-Citizen)
 
 > Section 3. Working with Variables : 변수 사용의 기초
 - Variables and Constants
-- Naming Convention
+- [Naming Convention](https://velog.io/@dayo2n/Swift-Naming-Convention)
 - Scope
 
 > Section 4. Literals, Data Types
@@ -45,7 +45,7 @@
 - break, continue
 - Labeled Statements
 
-> Section 9. Optionals
+> [Section 9. Optionals](https://velog.io/@dayo2n/Swift-Optional)
 - Optionals
 - Optional Binding
 - IUO: Implicitly Unwrapped Optionals
