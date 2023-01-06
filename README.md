@@ -17,12 +17,10 @@
 - [Naming Convention](https://velog.io/@dayo2n/Swift-Naming-Convention)
 - Scope
 
-> Section 4. Literals, Data Types
-- Data Types with Memory
-- Numbers
-- Boolean
-- Strings and Characters
-- Type Inference, Safety, Conversion, Alias
+> [Section 4. Literals, Data Types](https://github.com/dayo2n/Swift5/tree/main/4%20-%20Data%20Types)
+- [Data Types with Memory](https://www.inflearn.com/course/Swift-KXcoding/unit/20255?tab=curriculum)
+- Numbers, Boolean, Strings and Characters
+- [Type Inference, Safety, Conversion, Alias](https://velog.io/@dayo2n/Swift-Type)
 
 > Section 5. Operators
 - Operator Basics
