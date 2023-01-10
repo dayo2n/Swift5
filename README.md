@@ -100,7 +100,7 @@
 - Identity Operator
 - Nested Types
 
-> Section 17. Property
+> [Section 17. Property](https://velog.io/@dayo2n/Swift-Property)
 - Stored Property
 - Computed Property
 - Property Observer
